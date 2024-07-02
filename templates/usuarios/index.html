@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formulario.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <title>Registro</title>
+</head>
+{% include 'header.html' %}
+
+    <section class="formulario">
+        <div class="contenido">
+            <div class="box">
+                <img src="{{ url_for('static', filename='image/logoiniciosesion.png')}}">
+                <br>
+                <h1>Registrate</h1>
+                <br>
+                <form action="crear-registro" id="validar" method="POST">
+                    <div class="nombre">
+                        <input type="text" placeholder="Nombre" class="control" id="nombre" name="txtNombre">
+                    </div>
+                    <div class="usuario">
+                        <input type="text" placeholder="Usuario" class="control" id="usuario" name="txtUsuario">
+                    </div>
+                    <div class="email">
+                        <input type="text" placeholder="Correo" class="control" id="email" name="txtEmail">
+                    </div>
+                    <div class="password">
+                        <input type="password" placeholder="Password" class="control" id="password" name="txtPassword">
+                    </div>
+                    <br>
+                    <button type="submit" class="boton">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="app.js"></script>
+</body>
+
+{% include 'footer.html' %}
+</html>

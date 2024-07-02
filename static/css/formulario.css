@@ -1,0 +1,201 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/static/image/formularioinscripcion.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* Menu */
+.ClassUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.ClassLi {
+    display: inline-block; /* Cambiado de float: left */
+    margin-left: 15%;
+}
+
+.ClassA {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.ClassA:hover {
+    background-color: #111;
+}
+
+/* Formulario */
+
+.contenido .box {
+    background-color: rgb(41, 41, 41);
+    border: 1px solid rgb(79, 78, 78);
+    padding: 15px 25px;
+    border-radius: 15px;
+}
+
+.formulario {
+    min-height: 70vh;
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.contenido {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.contenido h1 {
+    font-size: 35px;
+    text-align: center;
+    line-height: 1.2;
+    color: rgb(251, 251, 252);
+    font-weight: 700;
+}
+
+.contenido form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenido .nombre{
+    margin: 25px;
+}
+
+.contenido .usuario{
+    margin: 25px;
+}
+
+.contenido .email{
+    margin: 25px;
+}
+
+.contenido .contraseña{
+    margin: 25px;
+}
+
+.contenido .text{
+    color: inherit;
+    opacity: 1;
+}
+
+.contenido .password{
+    color: inherit;
+    opacity: 1;
+}
+
+.contenido .control {
+    height: 30px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    color: whitesmoke;
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding: 5px;
+    box-sizing: border-box; 
+
+}
+
+.contenido .control:focus {
+    outline: none;
+}
+
+.contenido .boton {
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: aliceblue;
+    border: none;
+    color: rgb(32, 32, 32);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.contenido .boton::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(115, 185, 250);
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    z-index: -1;
+    opacity: 0;
+}
+
+.contenido .boton:hover::before {
+    opacity: 1;
+}
+
+/* Footer */
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: skyblue;
+    color: white;
+    line-height: 25px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 15px;
+}
+
+.ubicacion {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.iconos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+.icono_item {
+    margin: 0 5px;
+    color: white;
+    font-size: 18px;
+}
+
+.icono_item:hover {
+    color: #fec195;
+}
