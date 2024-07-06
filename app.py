@@ -1,5 +1,5 @@
 from flask import Flask, request
-from flask import render_template
+from flask import render_template, redirect
 from flask_mysqldb import MySQL
 app = Flask(__name__)
 
@@ -16,17 +16,11 @@ def index():
     cursor = conn.cursor() 
     cursor.execute("SELECT * FROM usuarios") 
     db_usuarios = cursor.fetchall()
-    print("-"*60)
-    for usuarios in db_usuarios:
-        print(usuarios)
-        print("-"*60)
     cursor.close()
 
     return render_template('usuarios/index.html', usuarios=db_usuarios)
 
-@app.route('/edit.html')
-def edit():
-    return render_template('usuarios/edit.html')
+
 
 #Registro de Usuarios
 
@@ -42,10 +36,54 @@ def crear_registro():
         cursor = conn.cursor()
         sql = "INSERT INTO usuarios (nombre, usuario, email, password) VALUES (%s, %s, %s, %s);"
         cursor.execute(sql, (_nombre, _usuario, _email, _password))
+        cursor.execute("SELECT * FROM usuarios WHERE Usuario = %s", (_usuario,))
+        usuario = cursor.fetchone()  # Usar fetchone para obtener solo un usuario
         conn.commit()
         cursor.close()
+        
+        return render_template('usuarios/PaginaPrincipal.html', usuario = usuario)
 
-        return render_template('usuarios/edit.html')
+
+#Actualizacion de registros
+@app.route('/edit/<int:Id>')
+def edit(Id):
+    conn = mysql.connection
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM usuarios WHERE Id = %s", (Id,))
+    usuario = cursor.fetchone()  # Usar fetchone para obtener solo un usuario
+    cursor.close()
+
+    return render_template('usuarios/edit.html', usuario=usuario)
+
+@app.route('/update', methods=['POST'])
+def update():
+    _Nombre = request.form['nombre']
+    _Usuario = request.form['Usuario']
+    _Email = request.form['email']
+    _Contraseña = request.form['contraseña']
+    _Id = request.form['txtId']
+
+    sql = "UPDATE `lapythoneta`.`usuarios` SET nombre =%s, usuario=%s,email=%s, password = %s  WHERE Id = %s"
+    params = [_Nombre, _Usuario,_Email, _Contraseña, _Id]
+
+    conn = mysql.connection
+    cursor = conn.cursor()
+    cursor.execute(sql, params)
+    conn.commit()
+    cursor.close()
+    return redirect('/')
+
+
+#EliminarElRegistro
+@app.route('/destroy/<int:Id>', methods=['GET'])
+def destroy(Id):
+    conn = mysql.connection
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM usuarios WHERE Id=%s", (Id,))
+    conn.commit()
+    cursor.close()
+    return redirect('/')
+
 
 if __name__=='__main__':
     app.run(debug=True)

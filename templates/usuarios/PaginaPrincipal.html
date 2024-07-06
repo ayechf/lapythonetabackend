@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/6dfa326e23.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="PaginaPrincipal/Imagenes/banderaargentina.ico" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/PaginaPrincipal/stylesPrincipal.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap"
+      rel="stylesheet"
+    />
+    <title>Compra de Entradas</title>
+  </head>
+  <body>
+    <header style="margin-bottom: auto">
+      <div class="header-logo-wrapper">
+        <div
+          class="justify-content-between d-flex divHeader"
+          
+        >
+          <div
+            class="justify-content-left align-items-center d-flex divHeader"
+          >
+            <div
+              class="d-inline-block header-logo divHeader"
+            >
+              <a
+                class="d-flex flex-column justify-content-center divHeader"
+              >
+                <img
+                  class="OtroEscudoImg"
+                  src="{{url_for('static', filename='image/PaginaPrincipal/OtroEscudo.jpg')}}"
+                />
+              </a>
+            </div>
+
+            <div class="HeaderInfo">
+              <div class="InfoHeader">
+                <span class="LetraHeader"> ASOCIACION DEL FUTBOL ARGENTINO </span>
+                <span class="LetraHeader"> | SEDE DIGITAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+      <div>
+        <a href="/edit/{{usuario[0]}}">
+          <i class="fa-solid fa-pen"></i>
+      </a>
+      </div>
+
+    </header>
+    
+    <nav class="menu">
+      <!-- Navegador Escritorio -->
+      <ul class="ClassUl desktop-nav">
+        <li class="ClassLi"><a class="ClassA" href="index.html">Home</a></li>
+        <li class="ClassLi"><a class="ClassA" href="shop.html">Market</a></li>
+        <li class="ClassLi"><a class="ClassA" href="formularioInscripcion.html">Registrarme</a></li>
+        <li class="ClassLi"><a class="ClassA" href="login.html">Ingresar</a></li>
+      </ul>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-toggle-icon">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+      <!-- Menú desplegable móvil -->
+      <ul class="ClassUl mobile-nav">
+        <li class="ClassLi"><span class="ClassA">Home</span></li>
+        <li class="ClassLi"><span class="ClassA">Market</span></li>
+        <li class="ClassLi">
+          <span class="ClassA">Contact</span>
+        </li>
+        <li class="ClassLi"><span class="ClassA">About</span></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <h1 class="Titulo" id="main-title">
+        <span class="TituloSpan">P</span><span class="TituloSpan">R</span
+        ><span class="TituloSpan">O</span><span class="TituloSpan">X</span
+        ><span class="TituloSpan">I</span><span class="TituloSpan">M</span
+        ><span class="TituloSpan">O</span><span class="TituloSpan"> </span>
+        <span class="TituloSpan"> P</span><span class="TituloSpan">A</span
+        ><span class="TituloSpan">R</span><span class="TituloSpan">T</span
+        ><span class="TituloSpan">I</span><span class="TituloSpan">D</span
+        ><span class="TituloSpan">O</span>
+      </h1>
+      <div class="escudos" id="main-images">
+        <img
+          src="{{url_for('static', filename='image/PaginaPrincipal/EscudoArg.jpg')}}"
+          alt="Escudo de Argentina"
+          class="escudoArg"
+        />
+
+        <img
+          src="{{url_for('static', filename='image/PaginaPrincipal/EscudoBrasil.png')}}"
+          alt="Escudo de Equipo visitante"
+          class="escudoVisitante"
+        />
+      </div>
+
+      <div class="Local" id="nombresPaisesLocal">
+        <span class="PaisLocal">
+          <br />
+          <br />
+          <br />
+
+          Argentina
+        </span>
+      </div>
+      <div class="Visitante" id="nombresPaisesVisitante">
+        <span class="PaisVisitante"> Brasil </span>
+      </div>
+      <button class="Boton">Comprar Entrada</button>
+    </main>
+
+    <footer>
+      <div class="ubicacion">
+        <span>
+          Sede Social. Asociacion del Futbol Argentino.
+          <br />
+          <a
+            class="preview-link"
+            href="https://www.google.com.ar/maps/place/Asociaci%C3%B3n+del+F%C3%BAtbol+Argentino/@-34.6006301,-58.3888733,17z/data=!3m1!4b1!4m6!3m5!1s0x95bccac708c492db:0xd382ce07c0e451c0!8m2!3d-34.6006345!4d-58.3862984!16s%2Fg%2F11b6htpp7t?entry=ttu"
+            target="_blank"
+            data-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1396493533803!2d-58.38887332339245!3d-34.60063005733679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac708c492db%3A0xd382ce07c0e451c0!2sAsociaci%C3%B3n%20del%20F%C3%BAtbol%20Argentino!5e0!3m2!1ses-419!2sar!4v1713807970737!5m2!1ses-419!2sar"
+            ><i
+              class="fa-solid fa-location-dot"
+              style="color: white !important"
+            ></i
+          ></a>
+          Viamonte 1366/76 (C1053ACB) Bs.As
+          <div id="iframe-preview" style="display: none"></div>
+          <br />
+          <i class="fa-solid fa-phone"></i> 4370-7900
+          <br />
+          <i class="fa-regular fa-envelope"></i>
+          selecciones@afa.org.ar
+        </span>
+      </div>
+
+      <div class="Center_Footer">
+        <a href="/destroy/{{usuario[0]}}">
+          <i class="fa-solid fa-trash">Eliminar Usuario </i>          
+        </a>
+      </div>
+
+      <div class="iconos">
+        <a
+          href="https://www.instagram.com/afaseleccion/?hl=es-la"
+          target="_blank"
+          ><i class="fa-brands fa-instagram icono_item"></i
+        ></a>
+        <a
+          href="https://twitter.com/Argentina?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+          target="_blank"
+          ><i class="fa-brands fa-x-twitter icono_item"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/AFASeleccionArgentina/?locale=es_LA"
+          target="_blank"
+        >
+          <i class="icono_item fa-brands fa-facebook"></i
+        ></a>
+      </div>
+    </footer>
+  </body>
+</html>
+<script src="{{url_for('static', filename='js/PaginaPrincipal/app.js')}}"></script>

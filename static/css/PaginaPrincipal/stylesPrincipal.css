@@ -1,0 +1,457 @@
+/* General header styling */
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General header styling */
+header {
+  box-shadow: none;
+  height: 71px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ensure full height */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Div inside header */
+.divHeader {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Image styling */
+.OtroEscudoImg {
+  width: 65px;
+  height: 72px;
+}
+
+/* Button styling */
+.iconoHeader {
+  height: 70%;
+  width: 100%;
+}
+
+/* Button positioning */
+.HeaderBoton {
+  text-align: right;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+/* Ensure header info takes full height */
+.HeaderInfo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Styling inside header info */
+.InfoHeader {
+  color: white;
+  padding-left: 18px;
+}
+
+/* Font styling */
+.LetraHeader {
+  font-family: 'Rubik Vinyl', system-ui;
+}
+
+/* General nav styling */
+nav {
+  width: 100%;
+  background-color: #333;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #111;
+}
+
+/* Mobile menu styles */
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle-icon {
+  display: none;
+  cursor: pointer;
+  color: blue;
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 1000; /* Asegura que el botón esté siempre por encima del contenido */
+}
+
+/* Estilos para el menú móvil */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: #333;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 60px;
+}
+
+.mobile-nav li {
+  padding: 10px;
+}
+
+/* Mostrar el menú móvil cuando el checkbox está marcado */
+.menu-toggle:checked ~ .mobile-nav {
+  display: flex;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 800px) {
+  .desktop-nav {
+    display: none;
+  }
+  .menu-toggle-icon {
+    display: block;
+  }
+}
+
+
+  .Titulo {
+    font: 300 80px/1 courier;
+    white-space: nowrap;
+    color: whitesmoke;
+  }
+  .TituloSpan {
+    display: inline-block;
+   color: skyblue;
+    animation: stretch 2.5s cubic-bezier(0.4, 1.4, 0.75, 0.9) infinite;
+    transform-origin: center;
+  }
+  
+  .TituloSpan:nth-of-type(1) {
+    animation-delay: 0.25s;
+  }
+  .TituloSpan:nth-of-type(2) {
+    animation-delay: 0.5s;
+  }
+  .TituloSpan:nth-of-type(3) {
+    animation-delay: 0.75s;
+  }
+  .TituloSpan:nth-of-type(4) {
+    animation-delay: 1s;
+  }
+  .TituloSpan:nth-of-type(5) {
+    animation-delay: 1.25s;
+  }
+  .TituloSpan:nth-of-type(6) {
+    animation-delay: 1.5s;
+  }
+  .TituloSpan:nth-of-type(7) {
+    animation-delay: 1.75s;
+  }
+  
+  .TituloSpan:nth-of-type(9) {
+    animation-delay: 2.0s;
+  }
+  .TituloSpan:nth-of-type(10) {
+    animation-delay: 2.25s;
+  }
+  .TituloSpan:nth-of-type(11) {
+    animation-delay: 2.50s;
+  }
+  .TituloSpan:nth-of-type(12) {
+    animation-delay: 2.75s;
+  }
+  .TituloSpan:nth-of-type(13) {
+    animation-delay: 3.0s;
+  }
+  .TituloSpan:nth-of-type(14) {
+    animation-delay: 3.25s;
+  }
+  
+  @keyframes stretch {
+    5% {
+      transform: scaleX(5000);
+   }
+    15% {
+      transform: scaleX(1);
+   }
+  }
+  
+  
+  .Local{
+    position: relative;
+    bottom: 21%;
+    right: 35%;
+    margin: 2px 3px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .PaisLocal{
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    
+    background-repeat: no-repeat;
+    background-size: 80%;
+    
+  }
+  
+  
+  .Visitante{
+    position: relative;
+    bottom: 32%;
+    left: 39%;
+    transform: translate(-21%, 35%);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .PaisVisitante{
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 80%;
+  }
+  
+  .centerTitule {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    color: red;
+  }
+  
+  #circle {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        justify-content: space-around;
+    height: 710px; /* Ajusta esto según la altura que desees */
+  }
+  
+  .escudos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 10%; /* Ajusta según necesidad */
+  }
+  
+  .escudoArg,
+  .escudoVisitante {
+    height: 110px;
+    width: 120px;
+    /* Las imágenes de fondo se mantienen como las definiste */
+  
+    background-position: center; /* Centra la imagen de fondo */
+  }
+  
+  .boton-container {
+    margin-top: 20px; /* Ajusta según necesidad */
+  }
+  
+  #circle span {
+    position: fixed;
+    height: 350px;
+    width: 300px;
+    transform-origin: bottom center;
+  }
+  
+  
+.Boton{
+  width: 165px;
+  height: 62px;
+  cursor: pointer;
+  color:yellow;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  position: relative;
+  background: #100720;
+  transition: 0.1s;
+   }
+
+
+   .Boton::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle
+      farthest-corner at 10% 20%, rgb(76, 219, 255)17.8%,
+      white);
+      filter: blur(15px);
+      z-index: -1;
+      position: absolute;
+      left:0;
+      top:0;
+   }
+   
+   .Boton:active{
+      transform: scale(0.9)rotate(3deg);
+      background-image: radial-gradient(circle
+      farthest-corner at 10% 20%, rgb(76, 219, 255)17.8%,
+      white);
+      transition: 0.5s;
+
+   }
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: skyblue;
+  color: white;
+  line-height: 25px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+}
+.Center_Footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.ubicacion {
+  display: flex;
+  align-items: flex-start;
+}
+
+.iconos {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.icono_item {
+  margin: 5px;
+  color: white;
+}
+
+.icono_item:hover {
+  color: #fec195;
+}
+
+#iframe-preview {
+  width: 250px;
+  height: 250px;
+  border: 1px solid #ccc;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  background-color: white;
+  display: none;
+}
+
+
+
+@media (max-width: 800px) {
+  .Titulo {
+    font: 300 70px/1 courier;
+    font-family: "Bebas Neue", sans-serif;
+  }
+
+  .escudoArg,
+  .escudoVisitante {
+    margin-top: 50px;
+    height: 100px;
+    width: 100px;
+    /* Las imágenes de fondo se mantienen como las definiste */
+  
+    background-position: center; /* Centra la imagen de fondo */
+  }
+
+  .Visitante {
+    position: relative;
+    transform: translate(50%, 50%);
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+
+  .Local{
+    position: relative;
+    margin: 2px 3px;
+    transform: translate(9%, 30%);
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+}
+
+
+
+
+
+@keyframes animateVisitante {
+  0%{
+    background-position: 500%;
+  }
+  100%{
+    background-position: -500%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
