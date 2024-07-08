@@ -2,10 +2,9 @@ document.getElementById('validacion').addEventListener('submit', function(evento
     evento.preventDefault();
 
     let nombre = document.getElementById('nombre').value;
-    let usuario = document.getElementById('usuario').value;
-    let documento = document.getElementById('documento').value;
+    let usuario = document.getElementById('Usuario').value;
     let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
+    let password = document.getElementById('contraseña').value;
 
     if (nombre === '') {
     alert('Escribi tu nombre completo');

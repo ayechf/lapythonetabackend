@@ -23,6 +23,10 @@ def index():
 
 
 #Registro de Usuarios
+@app.route('/CrearRegistro')
+def create():
+    return render_template('usuarios/CrearRegistro.html')
+
 
 @app.route('/crear-registro', methods=["POST"])
 def crear_registro():
@@ -36,12 +40,12 @@ def crear_registro():
         cursor = conn.cursor()
         sql = "INSERT INTO usuarios (nombre, usuario, email, password) VALUES (%s, %s, %s, %s);"
         cursor.execute(sql, (_nombre, _usuario, _email, _password))
-        cursor.execute("SELECT * FROM usuarios WHERE Usuario = %s", (_usuario,))
-        usuario = cursor.fetchone()  # Usar fetchone para obtener solo un usuario
+        cursor.execute("SELECT * FROM usuarios")
+        usuario = cursor.fetchall()  # Usar fetchone para obtener solo un usuario
         conn.commit()
         cursor.close()
         
-        return render_template('usuarios/PaginaPrincipal.html', usuario = usuario)
+        return render_template('usuarios/index.html', usuarios = usuario)
 
 
 #Actualizacion de registros
